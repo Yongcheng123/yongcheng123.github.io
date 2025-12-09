@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yongcheng Mu - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Navigation bar styling - full width on top */
+        .navbar {
+            background: linear-gradient(90deg, #2c5f7c 0%, #3a7191 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Sidebar fixed positioning - below navbar */
+        .sidebar {
+            position: fixed;
+            top: 64px; /* Height of navbar */
+            left: 0;
+            height: calc(100vh - 64px);
+            width: 300px;
+            overflow-y: auto;
+            background: #f8fafc;
+            border-right: 1px solid #e2e8f0;
+        }
+        
+        /* Main content with left margin for sidebar and top padding for navbar */
+        .main-content {
+            margin-left: 300px;
+            padding-top: 64px; /* Height of navbar */
+        }
+        
+        /* Profile image styling */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #e2e8f0;
+            object-fit: cover;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .sidebar {
+                position: relative;
+                top: 0;
+                width: 100%;
+                height: auto;
+            }
+            .main-content {
+                margin-left: 0;
+                padding-top: 64px;
+            }
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-slate-800">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar shadow-md">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between py-4">
+                <!-- Name on the left -->
+                <div class="text-white text-xl font-bold">
+                    Yongcheng Mu
+                </div>
+                
+                <!-- Navigation links on the right -->
+                <ul class="flex flex-wrap items-center space-x-1 text-white text-sm font-medium">
+                    <li><a href="#home" class="px-4 py-2 hover:bg-white/10 rounded transition-colors">Home</a></li>
+                    <li><a href="#education" class="px-4 py-2 hover:bg-white/10 rounded transition-colors">Education</a></li>
+                    <li><a href="#experience" class="px-4 py-2 hover:bg-white/10 rounded transition-colors">Experience</a></li>
+                    <li><a href="#skills" class="px-4 py-2 hover:bg-white/10 rounded transition-colors">Skills</a></li>
+                    <li><a href="#teaching" class="px-4 py-2 hover:bg-white/10 rounded transition-colors">Teaching</a></li>
+                    <li><a href="#projects" class="px-4 py-2 hover:bg-white/10 rounded transition-colors">Projects</a></li>
+                    <li><a href="#publications" class="px-4 py-2 hover:bg-white/10 rounded transition-colors">Publications</a></li>
+                    <li><a href="Yongcheng-Mu-Resume.pdf" target="_blank" class="px-4 py-2 hover:bg-white/10 rounded transition-colors">CV & Resume</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar text-slate-800">
+        <div class="p-8">
+            <!-- Profile Photo -->
+            <div class="flex justify-center mb-6 mt-4">
+                <img src="https://via.placeholder.com/150" alt="Yongcheng Mu" class="profile-img">
+            </div>
+            
+            <!-- Name and Title -->
+            <div class="text-center mb-8">
+                <h1 class="text-2xl font-bold mb-2 text-slate-900">Yongcheng Mu</h1>
+                <p class="text-sm text-slate-600">Ph.D. Candidate in Computer Science</p>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="space-y-4 text-sm text-slate-700">
+                <!-- Location -->
+                <div class="flex items-start space-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="flex-shrink-0 mt-0.5 text-slate-600" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                    </svg>
+                    <div>
+                        <a href="https://www.google.com/maps/place/Norfolk,%20VA" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-blue-600 transition-colors">Norfolk, VA</a>
+                    </div>
+                </div>
+                
+                <!-- University -->
+                <div class="flex items-start space-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="flex-shrink-0 mt-0.5 text-slate-600" viewBox="0 0 16 16">
+                        <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0l7.5-3a.5.5 0 0 0 .025-.917l-7.5-3.5zM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46z"/>
+                        <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032z"/>
+                    </svg>
+                    <div>
+                        <a href="https://www.odu.edu" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-blue-600 transition-colors">Old Dominion University</a>
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div class="flex items-start space-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="flex-shrink-0 mt-0.5 text-slate-600" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                    </svg>
+                    <div>
+                        <a href="mailto:ymu004@odu.edu" class="hover:text-blue-600 transition-colors break-all">ymu004@odu.edu</a>
+                    </div>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="pt-4 border-t border-slate-200">
+                    <div class="flex items-start space-x-3 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="flex-shrink-0 mt-0.5 text-slate-600" viewBox="0 0 16 16">
+                            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0l7.5-3a.5.5 0 0 0 .025-.917l-7.5-3.5zM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46z"/>
+                            <path d="M4.5 12.5a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0-.5.5v5z"/>
+                        </svg>
+                        <a href="https://scholar.google.com/citations?user=NlTvPMYAAAAJ&hl=en&authuser=1&oi=ao" target="_blank" class="hover:text-blue-600 transition-colors">Google Scholar</a>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="flex-shrink-0 mt-0.5 text-slate-600" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        <a href="https://github.com/Yongcheng123" target="_blank" class="hover:text-blue-600 transition-colors">Github</a>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="flex-shrink-0 mt-0.5 text-slate-600" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                        </svg>
+                        <a href="#" target="_blank" class="hover:text-blue-600 transition-colors">LinkedIn</a>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3 mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="flex-shrink-0 mt-0.5 text-slate-600" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                        </svg>
+                        <a href="https://orcid.org/0009-0005-7058-2979" target="_blank" class="hover:text-blue-600 transition-colors">ORCID</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Page Content -->
+        <div class="container mx-auto px-6 py-8 max-w-5xl">
+
+            <!-- Home / About Me Section -->
+            <section id="home" class="mb-12 bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">About Me</h2>
+                <p class="text-slate-700 leading-relaxed text-justify">
+                    I am a dedicated and analytical Ph.D. candidate in Computer Science at Old Dominion University with a strong background in machine learning, deep learning, and data analysis. My research focuses on developing innovative computational tools, particularly in the realm of bioinformatics and dietary analysis using deep learning techniques. I am passionate about solving complex problems and collaborating on impactful research projects.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-justify mt-4">
+                    My work involves applying state-of-the-art deep learning approaches to solve challenging problems in structural biology, specifically in the segmentation and analysis of protein structures from cryo-electron microscopy data. I have published multiple papers in top-tier conferences and journals, and I am committed to advancing the field through innovative research and collaboration.
+                </p>
+            </section>
+            
+            <!-- Research Section -->
+            <section id="research" class="mb-12 bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Research</h2>
+                <p class="text-slate-700 leading-relaxed text-justify mb-4">
+                    My research interests lie at the intersection of machine learning, computer vision, and computational biology. I focus on developing novel deep learning methodologies for analyzing biological structures from cryo-electron microscopy (cryo-EM) density maps.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-justify">
+                    Specifically, I work on protein secondary structure segmentation, developing advanced loss functions and neural network architectures to improve the accuracy of automated structure detection. My work contributes to the structural biology community by providing tools that accelerate the process of protein structure determination.
+                </p>
+                
+                <!-- Research Interests -->
+                <div class="mt-6">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-3">Research Interests:</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Machine Learning</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Deep Learning</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Computer Vision</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Bioinformatics</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Cryo-EM Analysis</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Protein Structure</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="mb-12 bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Education</h2>
+                <div class="space-y-4">
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-slate-900">Ph.D. in Computer Science</h3>
+                            <span class="text-sm font-medium text-slate-500 text-right whitespace-nowrap ml-4">Jan 2021 - Present</span>
+                        </div>
+                        <p class="text-sm text-slate-700 font-medium">Old Dominion University</p>
+                        <p class="text-sm text-slate-600 mb-2">Norfolk, VA</p>
+                        <p class="text-sm text-slate-700">Advisor: <a href="https://www.cs.odu.edu/~jhe/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Jing He</a></p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-slate-900">B.E. in Welding Technology and Engineering</h3>
+                            <span class="text-sm font-medium text-slate-500 text-right whitespace-nowrap ml-4">Aug 2009 - Jul 2013</span>
+                        </div>
+                        <p class="text-sm text-slate-700 font-medium">Lanzhou University of Technology</p>
+                        <p class="text-sm text-slate-600">Lanzhou, China</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="mb-12 bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Experience</h2>
+                <div class="space-y-4">
+                    <!-- Job 1 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-slate-900">Graduate Research Assistant</h3>
+                            <span class="text-sm font-medium text-slate-500 text-right whitespace-nowrap ml-4">Jan 2021 - Present</span>
+                        </div>
+                        <p class="text-sm text-slate-700 font-medium">ODU Research Foundation</p>
+                        <p class="text-sm text-slate-600 mb-3">Norfolk, VA</p>
+                        <ul class="list-disc list-inside text-slate-700 space-y-1 text-sm mb-3">
+                            <li>Collaborated with faculty to define and refine research objectives</li>
+                            <li>Conducted extensive data analysis to enhance project performance</li>
+                            <li>Published research findings in reputable journals and conferences</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Job 2 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-slate-900">Graduate Teaching Assistant</h3>
+                            <span class="text-sm font-medium text-slate-500 text-right whitespace-nowrap ml-4">Jan 2021 - Present</span>
+                        </div>
+                        <p class="text-sm text-slate-700 font-medium">Old Dominion University</p>
+                        <p class="text-sm text-slate-600 mb-3">Norfolk, VA</p>
+                        <ul class="list-disc list-inside text-slate-700 space-y-1 text-sm mb-3">
+                            <li>Developed and implemented lesson plans catering to diverse learning styles</li>
+                            <li>Provided individualized instruction to support student success</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Job 3 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold text-slate-900">Technician & Research Assistant</h3>
+                            <span class="text-sm font-medium text-slate-500 text-right whitespace-nowrap ml-4">Oct 2019 - Jan 2021</span>
+                        </div>
+                        <p class="text-sm text-slate-700 font-medium">ODU Research Foundation (Dept. of Bio-electrics)</p>
+                        <p class="text-sm text-slate-600 mb-3">Norfolk, VA</p>
+                        <ul class="list-disc list-inside text-slate-700 space-y-1 text-sm mb-3">
+                            <li>Designed and built programmable electronic equipment for bio-electrics research</li>
+                            <li>Analyzed and organized experimental results using Python and Excel</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="mb-12 bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Skills</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3">Programming Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">Python</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">C/C++</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">Java</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">MATLAB</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">R</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3">Machine Learning & Deep Learning</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">PyTorch</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">TensorFlow</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">Keras</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">Scikit-learn</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">OpenCV</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3">Tools & Technologies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">Git</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">Docker</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">Linux</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">Jupyter</span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm">LaTeX</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teaching Section -->
+            <section id="teaching" class="mb-12 bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Teaching</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-500 pl-6">
+                        <h3 class="text-lg font-semibold text-slate-800">Computer Science Courses</h3>
+                        <p class="text-slate-700 mt-2">Teaching Assistant for various undergraduate and graduate computer science courses at Old Dominion University, including:</p>
+                        <ul class="list-disc list-inside text-slate-700 space-y-1 mt-2 ml-4">
+                            <li>Introduction to Programming</li>
+                            <li>Data Structures and Algorithms</li>
+                            <li>Machine Learning</li>
+                            <li>Computer Vision</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="mb-12 bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Projects</h2>
+                <div class="space-y-6">
+                    <!-- DeepSSETracer Project -->
+                    <div class="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                    <a href="https://www.cs.odu.edu/~bioinfo/B2I_Tools/#" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors">
+                                        DeepSSETracer
+                                    </a>
+                                </h3>
+                                <p class="text-sm text-slate-600 mb-3">
+                                    <span class="font-medium">Affiliation:</span> Old Dominion University 
+                                    <span class="text-blue-600 ml-2">(Jan 2021 - Present)</span>
+                                </p>
+                                <p class="text-slate-700 text-sm mb-4">A Deep Learning-based tool for segmenting density maps obtained from medium-resolution cryo-electron microscopy. This tool helps researchers automatically identify protein secondary structures from cryo-EM data.</p>
+                                
+                                <!-- Skills Tags -->
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">PyTorch</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Deep Learning</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Computer Vision</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Python</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Bioinformatics</span>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <a href="https://www.cs.odu.edu/~bioinfo/B2I_Tools/#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 bg-[#2c5f7c] text-white text-xs font-medium rounded hover:bg-[#3a7191] transition-colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="mr-1.5" viewBox="0 0 16 16">
+                                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                        </svg>
+                                        Access Tool
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="md:w-48 flex-shrink-0">
+                                <img src="deepssetracer.png" alt="DeepSSETracer" class="w-full h-auto rounded-lg border border-slate-200">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Diet Estimation Project -->
+                    <div class="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Diet Estimation</h3>
+                        <p class="text-sm text-slate-600 mb-3">
+                            <span class="font-medium">Affiliation:</span> Old Dominion University 
+                            <span class="text-blue-600 ml-2">(Jan 2024 - Present)</span>
+                        </p>
+                        <p class="text-slate-700 text-sm mb-4">A method analyzing dietary composition from food photographs using a smartphone's camera and depth sensor via a Deep Learning approach. This project aims to help users track their nutritional intake accurately.</p>
+                        
+                        <!-- Skills Tags -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">PyTorch</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Deep Learning</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Computer Vision</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Image Processing</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Neurological Tissue Stimulation Antenna Project -->
+                    <div class="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Neurological Tissue Stimulation Antenna</h3>
+                        <p class="text-sm text-slate-600 mb-3">
+                            <span class="font-medium">Affiliation:</span> Old Dominion University 
+                            <span class="text-blue-600 ml-2">(Oct 2019 - Jan 2021)</span>
+                        </p>
+                        <p class="text-slate-700 text-sm mb-4">Conducted extensive experiments to simulate how electric fields were influenced through an antenna by cells, water, and air. This research contributes to the development of non-invasive neural stimulation technologies.</p>
+                        
+                        <!-- Skills Tags -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">MATLAB</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Electromagnetic Simulation</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Data Analysis</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Bio-electrics</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="mb-12 bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Publications</h2>
+                
+                <!-- Peer Reviewed Publications -->
+                <h3 class="text-xl font-semibold text-slate-700 mb-4 mt-6">Peer Reviewed Publications</h3>
+                <div class="space-y-4">
+                    <!-- Publication 2025 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <p class="text-sm text-slate-700 mb-2">
+                            <a href="https://dl.acm.org/conference/bcb" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline">[ACM-BCB]</a> <span class="font-semibold text-slate-900">Yongcheng Mu</span>, Jiangwen Sun, and Jing He. 
+                            <a href="https://doi.org/10.1145/3765612.3767255" target="_blank" class="text-blue-600 hover:underline">"Benchmarking and Improving Foundation Model Dietary Estimates from Meal Images"</a>. 
+                            Bioinformatics Advances, 2024. DOI: https://doi.org/10.1145/3765612.3767255
+                        </p>
+                        <div class="flex gap-2 mt-3">
+                            <a href="BCB-2025-YM.pdf" target="_blank" class="inline-flex items-center px-3 py-1.5 bg-[#2c5f7c] hover:bg-[#3a7191] text-white text-xs font-medium rounded transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="mr-1.5" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                </svg>
+                                PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Publication 2024 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <p class="text-sm text-slate-700 mb-2">
+                            <a href="https://academic.oup.com/bioinformaticsadvances" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline">[Bioinformatics Advances]</a> <span class="font-semibold text-slate-900">Yongcheng Mu</span>, Thu Nguyen, Bryan Hawickhorst, Willy Wriggers, Jiangwen Sun, and Jing He. 
+                            <a href="https://doi.org/10.1093/bioadv/vbae169" target="_blank" class="text-blue-600 hover:underline">"The Combined Focal Loss and Dice Loss Function Improves the Segmentation of Beta-sheets in Medium-Resolution Cryo-Electron-Microscopy Density Maps"</a>. 
+                            Bioinformatics Advances, 2024. DOI: 10.1093/bioadv/vbae169
+                        </p>
+                        <div class="flex gap-2 mt-3">
+                            <a href="vbae-2024-YM.pdf" target="_blank" class="inline-flex items-center px-3 py-1.5 bg-[#2c5f7c] hover:bg-[#3a7191] text-white text-xs font-medium rounded transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="mr-1.5" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                </svg>
+                                PDF
+                            </a>
+                            <a href="https://www.cs.odu.edu/~bioinfo/B2I_Tools/#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 bg-[#2c5f7c] hover:bg-[#3a7191] text-white text-xs font-medium rounded transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="mr-1.5" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                Access Tool
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 2023 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <p class="text-sm text-slate-700 mb-2">
+                            <a href="https://dl.acm.org/conference/bcb" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline">[ACM-BCB]</a> Thu Nguyen, <span class="font-semibold text-slate-900">Yongcheng Mu</span>, Jiangwen Sun, and Jing He. 
+                            <a href="https://doi.org/10.1145/3584371.3612947" target="_blank" class="text-blue-600 hover:underline">"An Approach to Developing Benchmark Datasets for Protein Secondary Structure Segmentation from Cryo-EM Density Maps"</a>. 
+                            Proceedings of the 14th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics (ACM-BCB), 2023. DOI: 10.1145/3584371.3612947
+                        </p>
+                        <div class="flex gap-2 mt-3">
+                            <a href="https://dl.acm.org/doi/pdf/10.1145/3584371.3612947" target="_blank" class="inline-flex items-center px-3 py-1.5 bg-[#2c5f7c] hover:bg-[#3a7191] text-white text-xs font-medium rounded transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="mr-1.5" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                </svg>
+                                PDF
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 2022 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <p class="text-sm text-slate-700 mb-2">
+                            <a href="https://ieeexplore.ieee.org/xpl/conhome/1000399/all-proceedings" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline">[IEEE BIBM]</a> <span class="font-semibold text-slate-900">Yongcheng Mu</span>, Jiangwen Sun, and Jing He. 
+                            <a href="https://ieeexplore.ieee.org/document/9995469" target="_blank" class="text-blue-600 hover:underline">"The Combined Focal Cross Entropy and Dice Loss Function for Segmentation of Protein Secondary Structures from Cryo-EM 3D Density maps"</a>. 
+                            2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM). DOI: 10.1109/BIBM55620.2022.9995469
+                        </p>
+                        <div class="flex gap-2 mt-3">
+                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12225904/pdf/nihms-1916927.pdf" target="_blank" class="inline-flex items-center px-3 py-1.5 bg-[#2c5f7c] hover:bg-[#3a7191] text-white text-xs font-medium rounded transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="mr-1.5" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                </svg>
+                                PDF
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 2021 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <p class="text-sm text-slate-700 mb-2">
+                            <a href="https://www.frontiersin.org/journals/bioinformatics" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline">[Frontiers]</a> <span class="font-semibold text-slate-900">Yongcheng Mu</span>, Salim Sazzed, Maytha Alshammari, Jiangwen Sun, and Jing He. 
+                            <a href="https://doi.org/10.3389/fbinf.2021.710119" target="_blank" class="text-blue-600 hover:underline">"A Tool for Segmentation of Secondary Structures in 3D Cryo-EM Density Map Components Using Deep Convolutional Neural Networks"</a>. 
+                            Frontiers in Bioinformatics, 2021. DOI: 10.3389/fbinf.2021.710119
+                        </p>
+                        <div class="flex gap-2 mt-3">
+                            <a href="https://public-pages-files-2025.frontiersin.org/journals/bioinformatics/articles/10.3389/fbinf.2021.710119/pdf" target="_blank" class="inline-flex items-center px-3 py-1.5 bg-[#2c5f7c] hover:bg-[#3a7191] text-white text-xs font-medium rounded transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="mr-1.5" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                </svg>
+                                PDF
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication 2020 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <p class="text-sm text-slate-700 mb-2">
+                            <a href="https://dl.acm.org/conference/bcb" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline">[ACM-BCB]</a> Yangmei Deng, <span class="font-semibold text-slate-900">Yongcheng Mu</span>, Salim Sazzed, Jiangwen Sun, and Jing He. 
+                            <a href="https://doi.org/10.1145/3388440.3414710" target="_blank" class="text-blue-600 hover:underline">"Using Curriculum Learning in Pattern Recognition of 3-dimensional Cryo-electron Microscopy Density Maps"</a>. 
+                            Proceedings of the 11th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics (ACM-BCB), 2020. DOI: 10.1145/3388440.3414710
+                        </p>
+                        <div class="flex gap-2 mt-3">
+                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9279008/pdf/nihms-1724514.pdf" target="_blank" class="inline-flex items-center px-3 py-1.5 bg-[#2c5f7c] hover:bg-[#3a7191] text-white text-xs font-medium rounded transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="mr-1.5" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                </svg>
+                                PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CV & Resume Section -->
+            <section id="cv-resume" class="mb-12 bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">CV & Resume</h2>
+                <p class="text-slate-700 mb-6">Download my resume here.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="Yongcheng-Mu-Resume.pdf" download class="inline-flex items-center px-6 py-3 bg-[#2c5f7c] hover:bg-[#3a7191] text-white font-medium rounded-lg transition-colors shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="mr-2" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                        </svg>
+                        Resume
+                    </a>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center mt-12 py-8">
+                <p class="text-sm text-slate-500">&copy; <span id="current-year"></span> Yongcheng Mu. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the current year in the footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
