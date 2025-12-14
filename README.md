@@ -3,7 +3,7 @@
 A modern, responsive personal portfolio website showcasing my research, publications, and projects as a Ph.D. candidate in Computer Science at Old Dominion University.
 
 ## 🌐 Live Website
-Visit: [https://ymu.github.io](https://yongcheng123.github.io)
+Visit: [https://yongcheng123.github.io](https://yongcheng123.github.io)
 
 ## 🔬 Research Focus
 - Deep Learning & Machine Learning
